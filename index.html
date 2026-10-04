@@ -165,7 +165,7 @@ function card(cb){
  c.toBlob(cb,'image/png');
 }
 $('share').onclick=()=>{
- const txt='LMEOW FLAP 😹 '+score+' '+medalFor(score)+"\nETH needs a meme. It's the cat.\n@lmeowfamily $LMEOW";
+ const txt='LMEOW FLAP 😹 '+score+' '+medalFor(score)+"\nETH needs a meme. It's the cat.\n@lmeowfamily $LMEOW\nPlay: https://lmeow-flap.vercel.app";
  card(blob=>{try{if(blob){const f=new File([blob],'lmeow-flap.png',{type:'image/png'});if(navigator.canShare&&navigator.canShare({files:[f]})){navigator.share({files:[f],text:txt}).catch(()=>{});return}}}catch(e){}
   if(navigator.share)navigator.share({text:txt}).catch(()=>{});else if(navigator.clipboard)navigator.clipboard.writeText(txt).then(()=>toast('copied. go post it.'));else toast('screenshot it and post it')});
 };
